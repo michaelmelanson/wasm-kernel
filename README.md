@@ -1,4 +1,4 @@
-# ossify
+# WASM kernel
 
 **tl;dr:** Follow the _Setup instructions_ then run `make`. 
 
