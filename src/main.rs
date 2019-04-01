@@ -13,16 +13,16 @@ use uefi::{
 };
 use log::info;
 
+mod wasm;
 
 #[no_mangle]
 pub extern "C" fn efi_main(_handle: Handle, system_table: SystemTable<Boot>) -> Status {
     uefi_services::init(&system_table)?.expect("UEFI services");
 
-    info!("Hello, world!");
-
-    let v = vec![1, 2, 3];
-
-    info!("Vector is {:?}", v);
+    let stdout = system_table.stdout();
+    stdout.clear();
+    
+    wasm::exec_init();
 
     //system_table.exit_boot_services();
 

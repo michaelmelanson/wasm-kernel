@@ -9,3 +9,4 @@ uefi = { git = "https://github.com/rust-osdev/uefi-rs.git" }
 uefi-alloc = { git = "https://github.com/rust-osdev/uefi-rs.git" }
 uefi-services = { git = "https://github.com/rust-osdev/uefi-rs.git" }
 log = "*"
+wasmi = { version = "0.4.4", default-features = false, features = ["core"] }
