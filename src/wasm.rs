@@ -1,5 +1,7 @@
 use log::{debug, error, info};
 use alloc::prelude::*;
+use wasmi::{ImportsBuilder, Module, ModuleInstance};
+
 
 
 #[no_mangle]
@@ -13,8 +15,6 @@ pub extern "C" fn fmod() {
 }
 
 pub fn exec_init() {
-    use wasmi::{ImportsBuilder, Module, ModuleInstance, NopExternals, RuntimeValue};
-
     let mut runtime = WasmRuntime::new();
 
     debug!("Creating WASM module for init process...");

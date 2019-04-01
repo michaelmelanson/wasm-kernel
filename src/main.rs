@@ -5,13 +5,10 @@
 
 extern crate alloc;
 
-use alloc::vec;
-
 use uefi::{
     Handle,
-    prelude::{Boot, SystemTable, Status}
+    prelude::{Boot, SystemTable, Status, ResultExt}
 };
-use log::info;
 
 mod wasm;
 
@@ -20,11 +17,9 @@ pub extern "C" fn efi_main(_handle: Handle, system_table: SystemTable<Boot>) -> 
     uefi_services::init(&system_table)?.expect("UEFI services");
 
     let stdout = system_table.stdout();
-    stdout.clear();
+    stdout.clear().expect_success("could not clear console");
     
     wasm::exec_init();
-
-    //system_table.exit_boot_services();
 
     loop {
         unsafe {
