@@ -1,6 +1,10 @@
 # ossify
 
-**tl;dr:** Follow the _Setup instructions_ then run `make`. It'll run a simple UEFI binary (see `extern/init`) in QEMU that executes WebAssembly.
+**tl;dr:** Follow the _Setup instructions_ then run `make`. 
+
+It'll run a simple UEFI binary (see `extern/init`) in QEMU that executes WebAssembly.
+
+![Screenshot](doc/images/screenshot.png)
 
 ## Setup instructions
 
