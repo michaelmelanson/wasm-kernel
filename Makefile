@@ -1,8 +1,5 @@
 all: extern build qemu
 
-setup:
-	brew install qemu
-
 extern:
 	cargo build --manifest-path extern/init/Cargo.toml --target "wasm32-unknown-unknown" --release
 
