@@ -1,5 +1,5 @@
 [package]
-name = "ossify"
+name = "wasm-kernel"
 version = "0.1.0"
 authors = ["Michael Melanson <michael.melanson@shopify.com>"]
 edition = "2018"
