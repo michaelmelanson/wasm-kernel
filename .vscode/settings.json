@@ -1,0 +1,4 @@
+{
+    "rust-client.channel": "nightly",
+    "rust.build_command": "make build"
+}

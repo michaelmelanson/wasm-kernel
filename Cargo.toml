@@ -1,0 +1,11 @@
+[package]
+name = "ossify"
+version = "0.1.0"
+authors = ["Michael Melanson <michael.melanson@shopify.com>"]
+edition = "2018"
+
+[dependencies]
+uefi = { git = "https://github.com/rust-osdev/uefi-rs.git" }
+uefi-alloc = { git = "https://github.com/rust-osdev/uefi-rs.git" }
+uefi-services = { git = "https://github.com/rust-osdev/uefi-rs.git" }
+log = "*"
