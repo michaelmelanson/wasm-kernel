@@ -4,6 +4,7 @@ rust:
 script:
   - cargo install cargo-xbuild
   - rustup target add wasm32-unknown-unknown
+  - rustup component add rust-src
   - cargo build --manifest-path extern/init/Cargo.toml --target "wasm32-unknown-unknown" --release
   - cargo xbuild --target ./x86_64-unknown-uefi.json
   
