@@ -10,9 +10,9 @@ work through, because this was done in like 4 hours so set your expectations acc
 This is a small Rust project that produces a bootable binary with an embedded WebAssembly interpreter. It can boot in QEMU (I
 haven't tried real hardware) using the included UEFI firmware, then execute WebAssembly binaries.
 
-It's basically what happens if you take [`uefi-rs`](https://crates.io/crates/uefi) in one hand and 
-[`wasmi`](https://crates.io/crates/wasmi) in the other hand, and try to stick them together. They had an enormous fight, and
-when they were done WebAssembly was booting on UEFI firmware.
+It's basically what happens if you took [`uefi-rs`](https://crates.io/crates/uefi) in one hand and 
+[`wasmi`](https://crates.io/crates/wasmi) in the other hand, and tried to stick them together. They had an enormous fight, and
+when they were done WebAssembly was booting in QEMU.
 
 ![Screenshot](doc/images/screenshot.png)
 
