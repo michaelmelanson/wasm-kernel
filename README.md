@@ -2,7 +2,8 @@
 
 Pushing forward the [_Birth and Death of Javascript_](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript) one step at a time.
 
-**tl;dr:** To run this follow the _Setup instructions_ then run `make`. 
+**tl;dr:** To run this follow the _Setup instructions_ then run `make`. You'll almost certainly get errors that you'll have to
+work through, because this was done in like 4 hours so set your expectations accordingly.
 
 ## What is this?
 
