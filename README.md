@@ -9,8 +9,9 @@ Pushing forward the [_Birth and Death of Javascript_](https://www.destroyallsoft
 This is a small Rust project that produces a bootable binary with an embedded WebAssembly interpreter. It can boot in QEMU (I
 haven't tried real hardware) using the included UEFI firmware, then execute WebAssembly binaries.
 
-It's basically what happens if you take `uefi-rs` in one hand and `wasmi` in the other hand, and try to stick them together. 
-They had an enormous fight, and when they were done you got this.
+It's basically what happens if you take [`uefi-rs`](https://crates.io/crates/uefi) in one hand and 
+[`wasmi`](https://crates.io/crates/wasmi) in the other hand, and try to stick them together. They had an enormous fight, and
+when they were WebAssembly was booting on UEFI firmware.
 
 ![Screenshot](doc/images/screenshot.png)
 
