@@ -11,6 +11,6 @@ It'll run a simple UEFI binary (see `extern/init`) in QEMU that executes WebAsse
 ```
 brew install qemu
 cargo install cargo-xbuild
-rustup toolchain add nightly
+rustup toolchain add nightly-2019-03-16
 rustup component add wasm32-unknown-unknown
 ```
