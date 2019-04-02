@@ -8,8 +8,9 @@ script:
 - make extern build dist
 deploy:
   provider: releases
+  file: dist/release.zip
   api_key:
     secure: rZRiiqfC9jEEanvbRfxLIg+4BezH4mBk+GmxzIefqPcXB1WUEpXLeU0paa8F7bndR+IOHd2zLOdzM1gfo5qGZRn25dY8FbQcNlpYceOW9pp9L3+pRX2guov4cMJvTrjwJf5VoBkIG31mALSroRr7HMK5rQA5AT4x/Gr7gqTMKkU0vVpYAathYWd6k7wRIVkSze9dHeglbuUzfQXsKp7xJi0WQIGbPxyIAo7curLsUNKHgn3iom5+Qdt4COARgYtywdnvMniTG93ZICKuZQAGwd9nXfoWBZjNaT4retBO7mFxUm3eW2nLMyDLpeUKaPOIweyUro+jk3y6rpYg6fE5AwFpkRA6rj6d9zVY4oy33PHk3UweayIt/uI7rYIK0b4DuHaBul4ixs/8TrUBSoM4wxSCeLhx6VQyLZsBfrQ2heSG87RaW2aUMX6LSpFNODWq3MRp2alecEshBYF6FpVG3406ZEIRJFxNjiQi6L3tWg/B60A+GKOnBOBPC2pmMfefY8xIzaMkSmQugehvwwI0gMrXG6day6ytbwG5xnm/MW/wKDKq8wjen2fnnsjSpuclNlc0XgL3obYNHWxEyfkbsSKLtM65oOl1C5qn4xz+Jj4mqJ2+gQ7hg82urbIoWsmPMTTxiHn5QIIaBQJj0Ma6KVxG58sGF1BglFDipiQs8ZE=
-  file: dist/release.zip
+  skip_cleanup: true
   on:
-    repo: michaelmelanson/wasm-kernel
+    tags: true
