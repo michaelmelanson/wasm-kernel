@@ -2,10 +2,7 @@ language: rust
 rust:
 - nightly-2019-03-16
 script:
-- cargo install cargo-xbuild
-- rustup target add wasm32-unknown-unknown
-- rustup component add rust-src
-- make extern build dist
+- make setup extern build dist
 deploy:
   provider: releases
   file: dist/release.zip

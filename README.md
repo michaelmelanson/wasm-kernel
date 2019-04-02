@@ -22,10 +22,8 @@ That text comes from a Rust application in `extern/init` that gets compiled to W
 ## Setup instructions
 
 ```
+make setup
 brew install qemu
-cargo install cargo-xbuild
-rustup toolchain add nightly-2019-03-16
-rustup component add wasm32-unknown-unknown
 ```
 
 At this point, running `make` should start QEMU and show `INFO: Hello from WASM!` as seen in the screenshot above.

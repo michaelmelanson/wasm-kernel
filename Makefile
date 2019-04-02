@@ -1,5 +1,10 @@
 all: extern build qemu
 
+setup:
+	cargo install cargo-xbuild
+	rustup target add wasm32-unknown-unknown
+	rustup component add rust-src
+
 extern:
 	cargo build --manifest-path extern/init/Cargo.toml --target "wasm32-unknown-unknown" --release
 
