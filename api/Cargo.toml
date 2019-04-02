@@ -1,11 +1,6 @@
 [package]
-name = "init"
+name = "wasm-kernel-api"
 version = "0.1.0"
 authors = ["Michael Melanson <michael.melanson@shopify.com>"]
 edition = "2018"
 
-[dependencies]
-wasm-kernel-api = { path = "../../api" }
-
-[lib]
-crate-type =["cdylib"]

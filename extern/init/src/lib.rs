@@ -1,6 +1,6 @@
-mod console;
+use wasm_kernel_api as api;
 
 #[no_mangle]
 pub extern fn main() {
-    console::println("Hello from WASM!");
+    api::console::println(format!("Hello {}!", "World").as_str());
 }

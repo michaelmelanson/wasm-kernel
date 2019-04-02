@@ -5,14 +5,18 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "build",
+            "label": "make",
             "command": "make",
             "args": [
-                "build"
+                "all"
             ],
             "problemMatcher": [
                 "$rustc"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
