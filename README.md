@@ -11,7 +11,7 @@ haven't tried real hardware) using the included UEFI firmware, then execute WebA
 
 It's basically what happens if you take [`uefi-rs`](https://crates.io/crates/uefi) in one hand and 
 [`wasmi`](https://crates.io/crates/wasmi) in the other hand, and try to stick them together. They had an enormous fight, and
-when they were WebAssembly was booting on UEFI firmware.
+when they were done WebAssembly was booting on UEFI firmware.
 
 ![Screenshot](doc/images/screenshot.png)
 
