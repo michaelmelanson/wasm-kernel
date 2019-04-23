@@ -21,10 +21,11 @@ pub extern "C" fn efi_main(_handle: Handle, system_table: SystemTable<Boot>) -> 
     let stdout = system_table.stdout();
     stdout.clear().expect_success("could not clear console");
     
+    let init_path = "\\bin\\init.wasm";
+    info!("Loading {}...", init_path);
     let mut fs = fs::Filesystem::new(system_table.boot_services()).expect("open filesystem");
-    let init_binary = fs.load("\\bin\\init.wasm").expect("load init binary");
-    info!("Init binary size: {}", init_binary.len());
-
+    let init_binary = fs.load(init_path).expect("load init binary");
+    info!("Starting init process...");
     wasm::exec(init_binary);
 
     loop {
