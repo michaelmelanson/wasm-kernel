@@ -3,6 +3,7 @@
 #![feature(asm)]
 #![feature(alloc)]
 
+use log::info;
 extern crate alloc;
 
 use uefi::{
@@ -11,6 +12,7 @@ use uefi::{
 };
 
 mod wasm;
+mod fs;
 
 #[no_mangle]
 pub extern "C" fn efi_main(_handle: Handle, system_table: SystemTable<Boot>) -> Status {
@@ -19,7 +21,11 @@ pub extern "C" fn efi_main(_handle: Handle, system_table: SystemTable<Boot>) -> 
     let stdout = system_table.stdout();
     stdout.clear().expect_success("could not clear console");
     
-    wasm::exec_init();
+    let mut fs = fs::Filesystem::new(system_table.boot_services()).expect("open filesystem");
+    let init_binary = fs.load("\\bin\\init.wasm").expect("load init binary");
+    info!("Init binary size: {}", init_binary.len());
+
+    wasm::exec(init_binary);
 
     loop {
         unsafe {

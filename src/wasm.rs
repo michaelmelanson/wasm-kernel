@@ -14,12 +14,11 @@ pub extern "C" fn fmod() {
     panic!("Call to fmod");
 }
 
-pub fn exec_init() {
+pub fn exec(binary: Vec<u8>) {
     let mut runtime = WasmRuntime::new();
 
     debug!("Creating WASM module for init process...");
-    let init_binary: &[u8] = include_bytes!("../extern/init/target/wasm32-unknown-unknown/release/init.wasm");
-    let module = Module::from_buffer(init_binary).expect("loading init WASM module");
+    let module = Module::from_buffer(binary).expect("loading init WASM module");
 
     debug!("Initializing 'init' process...");
     let main = ModuleInstance::new(&module, &ImportsBuilder::new().with_resolver("env", &runtime))
