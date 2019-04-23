@@ -1,7 +1,7 @@
 all: extern build qemu
 
 setup:
-	cargo install cargo-xbuild
+	[ -x "`command -v "cargo-xbuild"`" ] || cargo install cargo-xbuild
 	rustup target add wasm32-unknown-unknown
 	rustup component add rust-src
 
